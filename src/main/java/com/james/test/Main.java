@@ -17,6 +17,7 @@ public final class Main extends JavaPlugin implements Listener {
         System.out.println("The plugin has started!");
 
         getCommand("heal").setExecutor(new HealCommand());
+        getCommand("death").setExecutor(new DeathCommand());
 
         Bukkit.getPluginManager().registerEvents(this, this);
     }
@@ -35,7 +36,8 @@ public final class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerBedEnter(PlayerBedEnterEvent e) {
         e.getPlayer().sendMessage(ChatColor.AQUA + "Good Night Loser!");
-    }    @EventHandler
+    }
+    @EventHandler
     public void onPlayerBedLeave(PlayerBedLeaveEvent e) {
         e.getPlayer().sendMessage(ChatColor.AQUA + "Good Morning Loser!");
     }
