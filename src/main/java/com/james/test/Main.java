@@ -18,15 +18,16 @@ public final class Main extends JavaPlugin implements Listener {
 
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("death").setExecutor(new DeathCommand());
+//        getCommand("freeze").setExecutor(new FreezeCommand());
 
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
-//    @EventHandler
-//    public void onPlayerMove(PlayerMoveEvent e) {
-//        e.setCancelled(true);
-//        e.getPlayer().sendMessage(ChatColor.RED + "Stop moving!! You are frozen!!");
-//    }
+    @EventHandler
+    public void onPlayerMove(PlayerMoveEvent e) {
+        e.setCancelled(true);
+        e.getPlayer().sendMessage(ChatColor.RED + "Stop moving!! You are frozen!!");
+    }
 
     @EventHandler
     public void onPlayerEggThrow(PlayerEggThrowEvent e) {
