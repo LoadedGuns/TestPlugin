@@ -1,0 +1,6 @@
+name: TestPlugin
+version: '${project.version}'
+main: com.james.test.Main
+api-version: '1.20'
+authors: [James Sweetsir]
+description: Test Plugin
