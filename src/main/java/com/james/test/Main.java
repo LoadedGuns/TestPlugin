@@ -14,21 +14,21 @@ public final class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         System.out.println("The plugin has started!");
 
+        getCommand("heal").setExecutor(new HealCommand());
+
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
-    @EventHandler
-    public void onPlayerMove(PlayerMoveEvent e) {
-        e.setCancelled(true);
-        e.getPlayer().sendMessage(ChatColor.RED + "Stop moving!! You are frozen!!");
-    }
+//    @EventHandler
+//    public void onPlayerMove(PlayerMoveEvent e) {
+//        e.setCancelled(true);
+//        e.getPlayer().sendMessage(ChatColor.RED + "Stop moving!! You are frozen!!");
+//    }
 
     @EventHandler
     public void onPlayerEggThrow(PlayerEggThrowEvent e) {
         e.getPlayer().sendMessage(ChatColor.BLUE + "You just threw an egg!!");
     }
-
-
 
     @Override
     public void onDisable() {
