@@ -16,3 +16,5 @@ public final class Main extends JavaPlugin {
         System.out.println("The plugin has turned off!");
     }
 }
+
+
