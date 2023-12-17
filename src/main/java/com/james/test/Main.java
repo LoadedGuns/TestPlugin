@@ -16,8 +16,12 @@ public final class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         System.out.println("The plugin has started!");
 
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("death").setExecutor(new DeathCommand());
+        getCommand("config").setExecutor(new ConfigCommand());
 //        getCommand("freeze").setExecutor(new FreezeCommand());
 
         Bukkit.getPluginManager().registerEvents(this, this);
