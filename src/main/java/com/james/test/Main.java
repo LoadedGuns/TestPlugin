@@ -17,7 +17,6 @@ public final class Main extends JavaPlugin implements Listener {
 
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("death").setExecutor(new DeathCommand());
-        getCommand("test").setExecutor(new TestCommand());
 //        getCommand("freeze").setExecutor(new FreezeCommand());
 
         Bukkit.getPluginManager().registerEvents(this, this);
