@@ -2,12 +2,11 @@ package com.james.test;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.player.PlayerBedLeaveEvent;
-import org.bukkit.event.player.PlayerEggThrowEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin implements Listener {
@@ -18,6 +17,7 @@ public final class Main extends JavaPlugin implements Listener {
 
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("death").setExecutor(new DeathCommand());
+        getCommand("test").setExecutor(new TestCommand());
 //        getCommand("freeze").setExecutor(new FreezeCommand());
 
         Bukkit.getPluginManager().registerEvents(this, this);
@@ -42,6 +42,7 @@ public final class Main extends JavaPlugin implements Listener {
     public void onPlayerBedLeave(PlayerBedLeaveEvent e) {
         e.getPlayer().sendMessage(ChatColor.AQUA + "Good Morning Loser!");
     }
+
 
     @Override
     public void onDisable() {
