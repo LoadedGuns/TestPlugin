@@ -1,4 +1,4 @@
-com\james\test\TestCommand.class
+com\james\test\ConfigCommand.class
 com\james\test\DeathCommand.class
 com\james\test\Main.class
 com\james\test\HealCommand.class
